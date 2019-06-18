@@ -34,7 +34,7 @@ pip install kafka-python
 
 conda install -c conda-forge kafka-python
 ```
-## Ruinning Kafka
+## Running Kafka
 
 Run Zookeeper 
 ```

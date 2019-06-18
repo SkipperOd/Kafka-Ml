@@ -39,7 +39,7 @@ Run Kafka-Server
 ```
 kafka-server-start config/server.properties
 ```
-Don’t forget to start your Zookeeper server and Kafka broker before executing the example code below.
+#### Don’t forget to start your Zookeeper server and Kafka broker before executing the example code below.
 
 Create a new topic
 

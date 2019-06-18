@@ -1,5 +1,7 @@
 # Kafka-Ml
  Creating pipeline by integrating Kafka with Machine learning techniques.
+ #### Summary
+ Producer will read data from any datasource it can be any database,csv or any type for file. For now this example is using simple text file but we plan on changing it from .txt to .csv. After reading data producer will write it in topic and consumer will read it on its end after reading it we will be using NLP to do some processing on it. 
 
 ## Getting Started
 
@@ -51,3 +53,4 @@ Create a new topic
 ```
 kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic numtest
 ```
+

@@ -7,26 +7,21 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Setting up the environment
 
+### Installing
+
 First of all you want to have installed Kafka and Zookeeper on your machine
 
 ```
 https://kafka.apache.org/downloads
 ```
 
-### Installing
+Next install Kafka-Python.
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+You can do this using pip or conda, if you’re using an Anaconda distribution.
 ```
-Give the example
-```
+pip install kafka-python
 
-And repeat
-
-```
-until finished
+conda install -c conda-forge kafka-python
 ```
 
 End with an example of getting some data out of the system or using it for a little demo

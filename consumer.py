@@ -14,5 +14,8 @@ consumer = KafkaConsumer(
 
 for message in consumer:
     message = message.value
-    print(message,consumer)
+    with open("output.txt", "a") as output:
+        output.write(message)
+
+    print(message)
     

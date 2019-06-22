@@ -4,7 +4,7 @@ from kafka import KafkaProducer
 
 
 data_source = open('input.txt')
-producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
+producer = KafkaProducer(bootstrap_servers=['localhost:y'],
                          value_serializer=lambda x: 
                          dumps(x).encode('utf-8'))
 

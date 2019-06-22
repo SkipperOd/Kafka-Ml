@@ -3,7 +3,7 @@ from json import dumps
 from kafka import KafkaProducer
 import json
 
-data_source = open('Salary_Data.csv')
+data_source = open('raw_data/salary_data.csv')
 producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
                          value_serializer=lambda x: 
                          dumps(x).encode('utf-8'))

@@ -1,11 +1,8 @@
 from kafka import KafkaConsumer
 from json import loads
 import csv
-from ml import test_function
+from regression_model import model as regression
  
-
-
-test_function()
 
 consumer = KafkaConsumer(
     'numtest',
@@ -15,11 +12,16 @@ consumer = KafkaConsumer(
      group_id='my-group',
      value_deserializer=lambda x: loads(x.decode('utf-8')))
 
+regression = regression()
 
 for message in consumer:
     message = message.value
     row = [ message['year'],message['salary'] ]
-    with open('data.csv', 'a') as csvFile:
+    print(row)
+    if message['train']:
+        regression.update()
+    regression.predict(float(message['year']))
+    with open('model_data/data.csv', 'a') as csvFile:
         writer = csv.writer(csvFile)    
         writer.writerow(row)
     csvFile.close()

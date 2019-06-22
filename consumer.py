@@ -1,7 +1,11 @@
 from kafka import KafkaConsumer
 from json import loads
+import csv
+from ml import test_function
+ 
 
 
+test_function()
 
 consumer = KafkaConsumer(
     'numtest',
@@ -14,8 +18,10 @@ consumer = KafkaConsumer(
 
 for message in consumer:
     message = message.value
-    with open("output.txt", "a") as output:
-        output.write(message)
+    row = [ message['year'],message['salary'] ]
+    with open('data.csv', 'a') as csvFile:
+        writer = csv.writer(csvFile)    
+        writer.writerow(row)
+    csvFile.close()
 
-    print(message)
     

@@ -7,6 +7,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.externals import joblib
 
 split_size = .8
+
 class model():
     def data_pre_processing(self):
         data = pd.read_csv("model_data/data.csv")
@@ -53,6 +54,12 @@ class model():
         return joblib.load('model/model.pkl') 
 
     def __init__(self):
+        self.model()
+      
+    def update(self):
+      self.model()
+
+    def model(self):
         x_train,x_test,y_train,y_test = self.data_pre_processing()
         training_data = {
             "x_train" :x_train ,
@@ -70,23 +77,7 @@ class model():
         }
         self.visualization()
 
-    def update(self):
-        x_train,x_test,y_train,y_test = self.data_pre_processing()
-        training_data = {
-            "x_train" :x_train ,
-            "y_train" : y_train
-        }
-        testing_data = {
-            "x_test" : x_test,
-            "y_test" : y_test
-        }
-        model = self.training(training_data)
-        self.model_data= {
-            "model" : model,
-            "testing_data" : testing_data,
-            "training_data" :training_data
-        }
-        self.visualization()
+      
     
     
 
